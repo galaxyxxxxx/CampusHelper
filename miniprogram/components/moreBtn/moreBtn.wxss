@@ -1,0 +1,19 @@
+.moreBtn{
+  width: 140rpx;
+  height: 48rpx;
+  background: var(--color-theme);
+  border-radius: 24rpx;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: small;
+
+  color: #fff;
+  transition: fliter 1s ease;
+  z-index: 1;
+}
+
+.moreBtn:active{
+  filter: brightness(0.8);
+}

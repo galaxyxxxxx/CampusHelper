@@ -1,0 +1,63 @@
+.container{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.header{
+  box-sizing: border-box;
+  border-radius: 60rpx;
+  margin: 20rpx 0;
+  padding: 40rpx;
+  width: 92vw;
+  height: 24vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--color-theme);
+  color: #fff;
+}
+.avatar{
+  width: 8vh;
+  height: 8vh;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.name{
+  margin-top: 10rpx;
+  font-size: x-large;
+  font-weight: bold;
+}
+.major{
+}
+.label{
+  font-size: large;
+  color: #999;
+}
+
+/* personal */
+.personal{
+  padding: 40rpx 0;
+}
+.list{
+  width: 92vw;
+  padding: 32rpx 4rpx;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  transition: filter 1s ease;
+}
+.list:active{
+  filter: brightness(0.8);
+}
+.title{
+  padding-left: 20rpx;
+  flex: 1;
+  font-weight: bold;
+}
+.setting{
+  width: 92vw;
+}
+van-icon{
+  font-size: x-large;
+  font-weight: bold;
+}

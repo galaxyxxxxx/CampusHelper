@@ -1,77 +1,40 @@
-<!--index.wxml-->
-<view class="container">
+<view class="authrization" wx:if="{{!hasUserInfo}}">
+  <view class="authMain" wx:if="{{canIUseGetUserProfile}}">
+    <image src='../../image/bjut.png' width="200rpx" height="200rpx"></image>
+    <view class='content'>
+      <view class="id">BJUT Helper</view>
+      <view class="description"><text decode="true">Easily order \n Your Books</text></view>
+      <view class="applyTitle"><text decode="true">BJUT Helper is a tool for you to order the books before new semester coming. when you are logging in for the first time, We apply for the following permissions: \nCollect your public infos (Nickname & Avatar).</text></view>
+    </view>
+    <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile" class='loginBtn' open-type="getUserInfo" lang="zh_CN"> LOGIN </button>
+    <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='loginBtn' open-type="getUserInfo" lang="zh_CN"> LOGIN </button>
+  </view>
 
-  <!-- 用户 openid -->
-  <view class="userinfo">
-    <block wx:if="{{canIUseOpenData}}" class="userinfo-opendata">
-      <view class="userinfo-block-avatar" bindtap="bindViewTap">
+  <view wx:else>请升级微信版本</view>
+</view>
+
+<view class="container" wx:else>
+  <view class="head">
+    <view class="label">My Courses</view>
+    <view class="avatar" bindtap="me"><open-data type="userAvatarUrl"></open-data></view>
+  </view>
+  <view class="static">
+    data
+  </view>
+  <view class="courses">
+    <view class="header">title + search</view>
+    <view class="course" wx:for="{{courses}}" wx:key="id">
+      <view class="left">
         <open-data type="userAvatarUrl"></open-data>
       </view>
-    </block>
-    <block wx:elif="{{!hasUserInfo}}">
-      <button 
-        wx:if="{{canIUseGetUserProfile}}" 
-        bindtap="getUserProfile"
-        class="userinfo-avatar"
-        style="background-image: url({{avatarUrl}})"
-        size="default"
-      ></button>
-      <button
-        wx:else
-        open-type="getUserInfo" 
-        bindgetuserinfo="onGetUserInfo"
-        class="userinfo-avatar"
-        style="background-image: url({{avatarUrl}})"
-        size="default"
-      ></button>
-    </block>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-block-avatar" src="{{avatarUrl}}" mode="cover"></image>
-    </block>
-    <view class="userinfo-nickname-wrapper">
-      <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
+      <view class="middle">
+        <view class="title">{{item.title}} · {{item.teacher}}</view>
+        <view class="date">{{item.date+item.semester}} - {{item.date+item.semester+ 1}}学年 {{item.semester == 0 ? '春' : '秋'}}季学期</view>
+      </view>
+      <view class="right">
+        ￥{{item.price}}
+      </view>
     </view>
   </view>
-
-
-  <!-- 上传图片 -->
-  <view class="uploader">
-    <view class="uploader-text" bindtap="doUpload">
-      <text>上传图片</text>
-    </view>
-    <view class="uploader-container" wx:if="{{imgUrl}}">
-      <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
-    </view>
-  </view>
-
-
-  <!-- 操作数据库 -->
-  <view class="uploader">
-    <navigator url="../databaseGuide/databaseGuide" open-type="navigate" class="uploader-text">
-      <text>前端操作数据库</text>
-    </navigator>
-  </view>
-
-  <!-- 即时通信 -->
-  <view class="uploader">
-    <navigator url="../im/im" open-type="navigate" class="uploader-text">
-      <text>即时通信 Demo</text>
-    </navigator>
-  </view>
-
-  <!-- 新建云函数 -->
-  <view class="uploader">
-    <navigator url="../addFunction/addFunction" open-type="navigate" class="uploader-text">
-      <text>快速新建云函数</text>
-    </navigator>
-  </view>
-
-  <!-- 云调用 -->
-  <view class="uploader">
-    <navigator url="../openapi/openapi" open-type="navigate" class="uploader-text">
-      <text>云调用</text>
-    </navigator>
-  </view>
-
-
+  <view class="bottomWach"></view>
 </view>

@@ -1,0 +1,43 @@
+<view class="container">
+  <view class="header">
+    <view class="avatar"><open-data type="userAvatarUrl"></open-data></view>
+    <view class="name">{{name}}</view>
+    <view class="major">{{major}}</view>
+  </view>
+  <view class="personal">
+    <view class="label">Personal</view>
+    <view class="list">
+      <van-icon name="user-o" />
+      <view class="title">Personal Information</view>
+      <van-icon name="arrow" />
+    </view>
+    <view class="list">
+      <van-icon name="like-o" />
+      <view class="title">Favorites</view>
+      <van-icon name="arrow" />
+    </view>
+    <view class="list">
+      <van-icon name="idcard" />
+      <view class="title">Payments</view>
+      <van-icon name="arrow" />
+    </view>
+    <view class="list">
+      <van-icon name="bullhorn-o" />
+      <view class="title">Notifications</view>
+      <van-icon name="arrow" />
+    </view>
+  </view>
+  <view class="setting">
+    <view class="label">Setting</view>
+    <view class="list">
+      <van-icon name="setting-o" />
+      <view class="title">Integrations</view>
+      <van-icon name="arrow" />
+    </view>
+    <view class="list">
+      <van-icon name="question-o" />
+      <view class="title">Help & Support</view>
+      <van-icon name="arrow" />
+    </view>
+  </view>
+</view>

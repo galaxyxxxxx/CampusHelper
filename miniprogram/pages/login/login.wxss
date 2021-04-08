@@ -1,0 +1,103 @@
+.mode{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 25rpx;
+  padding: 160rpx 0;
+  height: 100vh;
+  box-sizing: border-box;
+}
+.mode image{
+  width: 200rpx;
+  min-height: 200rpx;
+  border-radius: 50%;
+  background-color: orange;
+}
+.content{
+  margin: 0;
+  line-height: 50rpx;
+  text-align: center;
+  color: var(--color-theme);
+}
+.slogan{
+  font-size: x-large;
+  font-weight: bold;
+  margin: 20rpx 0;
+  line-height: 2rem;
+}
+.applyTitle{
+  color: #999;
+  font-size: smaller;
+  font-weight: bold;
+  line-height: 1rem;
+  margin: 0 60rpx;
+}
+.buttons{
+  margin-top: 80rpx;
+}
+.btn:nth-of-type(2){
+  margin-top: 20rpx;
+  background: #fff;
+  color: var(--color-theme);
+}
+.tip{
+  font-size: x-small;
+}
+.signin{
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* 注册页 */
+.head{
+  flex-direction: column;
+  align-items: flex-start;
+  border: none;
+}
+.desc{
+  margin-top: 16rpx;
+  font-size: smaller;
+}
+.form{
+  width: 92vw;
+}
+.form-list{
+  height: 80rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--color-gray);
+  border-radius: 40rpx;
+  margin: 20rpx 0;
+  font-size: smaller;
+}
+.lable{
+  padding-left: 5vw;
+  width: 32vw;
+}
+.arrow{
+  float: right;
+}
+.btn{
+  margin-top: 80rpx;
+}
+.tip2{
+  font-size: smaller;
+  width: 60vw;
+  padding-top: 200rpx;
+  line-height: 2;
+  color: #999;
+}
+.emphysis{
+  color: var(--color-theme);
+  font-weight: bold;
+}
+
+/* Login */
+.tip:last-of-type {
+  width: 100%;
+  text-align: center;
+  font-size: smaller;
+  padding-top: 100rpx;
+}
