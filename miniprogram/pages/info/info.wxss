@@ -1,0 +1,46 @@
+.head{
+  flex-direction: column;
+  align-items: flex-start;
+  border: none;
+}
+.form{
+  width: 92vw;
+}
+.form-list{
+  height: 80rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--color-gray);
+  border-radius: 40rpx;
+  margin: 20rpx 0;
+  font-size: smaller;
+}
+.major{
+  flex: 1;
+}
+.arrow{
+  float: right;
+}
+.btn{
+  margin-top: 80rpx;
+}
+.tip2{
+  font-size: smaller;
+  width: 60vw;
+  padding-top: 200rpx;
+  line-height: 2;
+  color: #999;
+}
+.emphysis{
+  color: var(--color-theme);
+  font-weight: bold;
+}
+
+/* Login */
+.tip{
+  width: 100%;
+  text-align: center;
+  font-size: smaller;
+  padding-top: 80rpx;
+}

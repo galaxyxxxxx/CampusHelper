@@ -1,2 +1,4 @@
-<!--components/head/head.wxml-->
-<text>components/head/head.wxml</text>
+<view class="head">
+  <view class="label">{{title}}</view>
+  <view class="avatar" bindtap="me"><open-data type="userAvatarUrl"></open-data></view>
+</view>

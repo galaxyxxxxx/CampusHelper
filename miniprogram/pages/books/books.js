@@ -1,65 +1,50 @@
-// pages/books/books.js
+
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    books: [{
+      cover: 111,
+      title: '编译原理指南',
+      price: 35.5,
+      course: '编译原理',
+      teacher: '高红雨',
+    },{
+      cover: 111,
+      title: '编译原理指南',
+      price: 35.5,
+      course: '编译原理',
+      teacher: '高红雨',
+    },{
+      cover: 111,
+      title: '编译原理指南',
+      price: 35.5,
+      course: '编译原理',
+      teacher: '高红雨',
+    }]
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
 
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
 
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  navigateToAddBook(){
+    wx.navigateTo({
+      url: '../addBook/addBook?mode=' + 'create',
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
   onPullDownRefresh: function () {
 
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
   onReachBottom: function () {
 
   },
 
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function () {
 
   }

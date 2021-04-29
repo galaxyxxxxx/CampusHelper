@@ -4,32 +4,40 @@ Component({
 		list: [
 			{
 				icon: 'home-o',
-				url: '../pages/index/index'
+				url: '../index/index'
 			},
 			{
 				icon: 'search',
-				url: '../pages/index/index'
+				url: '../books/books'
+			},
+			{
+				icon: 'like-o',
+				url: '../favor/favor'
 			},
 			{
 				icon: 'contact',
-				url: '../pages/me/me'
+				url: '../me/me'
 			}
 		]
 	},
 
+	mounted : function(){
+		if(wx.getStorageSync('tabIndex')){
+			this.setData({
+				active:wx.getStorageSync('tabIndex')
+			})
+		}
+	},
+
 	methods: {
 		onChange(event) {
-			this.setData({ active: event.detail });
+			this.setData({ active: event.detail})
+			wx.setStorageSync('tabIndex', event.detail)
 			wx.switchTab({
 				url: this.data.list[event.detail].url
 			});
+
 		},
 
-		init() {
-			const page = getCurrentPages().pop();
-			this.setData({
-				active: this.data.list.findIndex(item => item.url === `/${page.route}`)
-			});
-		}
 	}
 });

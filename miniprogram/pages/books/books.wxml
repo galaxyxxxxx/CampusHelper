@@ -1,2 +1,18 @@
-<!--pages/books/books.wxml-->
-<text>pages/books/books.wxml</text>
+<view class="container">
+  <head title='Book'></head>
+  <view class="search">
+    <van-search value="{{ value }}" placeholder="Search for your book" shape='round' />
+  </view>
+
+  <view class="books">
+    <view class="book" wx:for="{{books}}">
+      <view class="cover">{{item.cover}}</view>
+      <view class="title">{{item.title}} ￥{{item.price}}</view>
+      <view class="desc">【{{item.course}}】{{item.teacher}}老师推荐</view>
+      <view class="control">
+        <view class="like"><van-icon name="like-o" /></view>
+        <view class="more"><van-icon name="share-o" /></view>
+      </view>
+    </view>
+  </view>
+</view>

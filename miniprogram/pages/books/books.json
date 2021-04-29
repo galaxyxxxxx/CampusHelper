@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "van-search": "../../weapp/dist/search/index",
+    "van-grid": "../../weapp/dist/grid/index",
+  "van-grid-item": "../../weapp/dist/grid-item/index"
+  }
 }

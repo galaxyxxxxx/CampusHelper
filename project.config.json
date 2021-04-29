@@ -68,6 +68,36 @@
         {
           "name": "个人页",
           "pathName": "pages/me/me",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "书籍页",
+          "pathName": "pages/books/books",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "课程编辑页",
+          "pathName": "pages/addCourse/addCourse",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "书籍编辑页",
+          "pathName": "pages/addBook/addBook",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "个人信息页",
+          "pathName": "pages/info/info",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "心愿单",
+          "pathName": "pages/favor/favor",
           "scene": null
         }
       ]

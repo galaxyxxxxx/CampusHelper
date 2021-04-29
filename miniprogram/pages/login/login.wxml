@@ -1,69 +1,72 @@
-<view class="mode" wx:if="{{mode==null}}">
+<view class="all" wx:if="{{load}}">
+  <view class="mode" wx:if="{{mode==null}}">
+    <image src='../../image/reading.svg'></image>
+    <view class='content'>
+      <view class="slogan"><text decode="true">Choose the BOOK\nYour Like</text></view>
+      <view class="applyTitle"><text decode="true">Order more and cheaper\nin advance </text></view>
+    </view>
 
-  <image src='../../image/reading.svg'></image>
-  <view class='content'>
-    <view class="slogan"><text decode="true">Choose the BOOK\nYour Like</text></view>
-    <view class="applyTitle"><text decode="true">Order more and cheaper\nin advance </text></view>
+    <view class="buttons">
+      <button class='btn' data-tag="teacher" bindtap="chooseMode"> Sign Up with teacher ID </button>
+      <button class='btn' data-tag="student" bindtap="chooseMode"> Sign Up with student ID</button>
+    </view>
+
+    <view class="tip">Already have an account? <text class="signin" data-tag="signIn" bindtap="chooseMode">Sign In</text></view>
   </view>
 
-  <view class="buttons">
-    <button class='btn' data-tag="teacher" bindtap="chooseMode"> Sign Up with teacher ID </button>
-    <button class='btn' data-tag="student" bindtap="chooseMode"> Sign Up with student ID</button>
-  </view>
-
-  <view class="tip">Already have an account? <text class="signin" data-tag="signIn" bindtap="chooseMode">Sign In</text></view>
-</view>
-
-<view class="container" wx:elif="{{mode == 0 }}">
-  <view class="head">
-    <view class="label">Sign Up</view>
-    <view class="desc">Create an account so you can order your books even faster and cheaper</view>
-  </view>
-  <view class="form">
-    <view class="form-list">
-      <view class="lable">Username</view><input class="inputInline" type="text" model:value="{{name}}" />
+  <view class="container" wx:elif="{{mode == 0 }}">
+    <view class="head">
+      <view class="label">Sign Up</view>
+      <view class="desc">Create an account so you can order your books even faster and cheaper</view>
     </view>
-    <view class="form-list">
-      <view class="lable">Campus ID</view><input class="inputInline" type="number" model:value="{{id}}" />
-    </view>
-    <view class="form-list">
-      <view class="lable">Mobile Number</view><input class="inputInline" type="number" model:value="{{tel}}" />
-    </view>
-    <view class="form-list" bindtap="onShowDep">
-      <view class="lable">Major</view>
-      <view class="major" >{{dep1}} {{dep2}}</view>
-      <view class="arrow"><van-icon name="arrow" /></view> 
-    </view>
-    <van-dialog id="van-dialog"  />
-    <van-popup show="{{ showDep }}" position="bottom" bind:close="onCloseDep" 	bind:confirm="onConfirmDep" bind:change="onChangeDep" round>
-				<van-picker columns="{{ department }}" bind:change="onChangeDep" show-toolbar title="" bind:cancel="onCancelDep" bind:close="onCloseDep"
-					bind:confirm="onConfirmDep" />
+    <view class="form">
+      <view class="form-list">
+        <view class="formLabel">Username</view><input class="inputInline" type="text" class='value' model:value="{{name}}" />
+      </view>
+      <view class="form-list">
+        <view class="formLabel">Campus ID</view><input class="inputInline" type="number" class='value'  model:value="{{id}}" />
+      </view>
+      <view class="form-list">
+        <view class="formLabel">Mobile Number</view><input class="inputInline" type="number" class='value'  model:value="{{tel}}" />
+      </view>
+      <view class="form-list" bindtap="onShowDep">
+        <view class="formLabel">Major</view>
+        <view class='value'>{{dep1}} {{dep2}}</view>
+        <view class="arrow">
+          <van-icon name="arrow" />
+        </view>
+      </view>
+      <van-dialog id="van-dialog" />
+      <van-popup show="{{ showDep }}" position="bottom" bind:close="onCloseDep" bind:confirm="onConfirmDep"
+        bind:change="onChangeDep" round>
+        <van-picker columns="{{ department }}" bind:change="onChangeDep" show-toolbar title="" bind:cancel="onCancelDep"
+          bind:close="onCloseDep" bind:confirm="onConfirmDep" />
       </van-popup>
-    <button type="submit" class="btn">Create an account</button>
+      <button type="submit" class="btn" bindtap="signUp">Create an account</button>
+    </view>
+    <view class="tip2">By signing up, your're agree to our <text class="emphysis">Terms of Use</text> and <text
+        class="emphysis">Privacy Policy</text></view>
   </view>
-  <view class="tip2">By signing up, your're agree to our <text class="emphysis">Terms of Use</text> and <text class="emphysis">Privacy Policy</text></view>
+
+  <view class="container" wx:else>
+    <view class="head">
+      <view class="label">Welcome back!</view>
+      <view class="desc">Sign in to your account</view>
+    </view>
+    <view class="form">
+      <view class="form-list">
+        <view class="formLabel">Campus ID</view><input class="inputInline" type="number" model:value="{{id}}" />
+      </view>
+      <view class="form-list">
+        <view class="formLabel">Mobile Number</view><input class="inputInline" type="number" model:value="{{tel}}" />
+      </view>
+      <button type="submit" class="btn" bindtap="signIn">Continue</button>
+    </view>
+    <view class="tip">Haven't have an account yet?
+      <view>
+        <text class="signin" data-tag="teacher" bindtap="chooseMode">Sign Up as a Teacher</text> / <text class="signin"
+          data-tag="student" bindtap="chooseMode">Student</text>
+      </view>
+    </view>
+  </view>
 </view>
-
-<view class="container" wx:else>
-  <view class="head">
-    <view class="label">Welcome back!</view>
-    <view class="desc">Sign in to your account</view>
-  </view>
-  <view class="form">
-    <view class="form-list">
-      <view class="lable">Campus ID</view><input class="inputInline" type="number" model:value="{{id}}" />
-    </view>
-    <view class="form-list">
-      <view class="lable">Mobile Number</view><input class="inputInline" type="number" model:value="{{tel}}" />
-    </view>
-    <button type="submit" class="btn">Continue</button>
-  </view>
-  <view class="tip">Haven't have an account yet?
-    <view>
-      <text class="signin" data-tag="teacher" bindtap="chooseMode">Sign Up as a Teacher</text> / <text class="signin" data-tag="student" bindtap="chooseMode">Student</text>
-    </view>
-  </view>
-</view>
-
-
-

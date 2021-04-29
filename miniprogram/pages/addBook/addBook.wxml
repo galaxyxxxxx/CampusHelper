@@ -1,0 +1,37 @@
+<view class="container">
+  <view class="head">
+    <view class="left">
+      <view class="label">
+        <text wx:if="{{mode == 'create'}}">Post</text>
+        <text wx:else>Edit</text> a Book</view>
+      <view class="desc"><text wx:if="{{mode == 'create'}}">Post</text>
+        <text wx:else>Edit</text> your book to show public so that your students could choose them in advance</view>
+    </view>
+  </view>
+  <view class="form">
+    <view class="upload">
+      <van-uploader file-list="{{ fileList }}" accept='image' preview-size='200px' bind:after-read="afterRead"
+        image-fit='scaleToFill' max-count="1" bind:delete="deleteImg" deletable="{{ true }}" />
+      <view class="uploadLabel">Choose the COVER</view>
+    </view>
+    <view class="form-list">
+      <view class="formLabel">Title</view><input class="inputInline" type="text" model:value="{{title}}" />
+    </view>
+    <view class="form-list">
+      <view class="formLabel">ISBN</view><input class="inputInline" type="number" model:value="{{isbn}}" />
+    </view>
+    <view class="form-list">
+      <view class="formLabel">Price</view><input class="inputInline" type="number" model:value="{{price}}" />
+    </view>
+    <view class="form-list">
+      <view class="formLabel">Description</view><input class="inputInline" type="number" model:value="{{desc}}" />
+    </view>
+  </view>
+
+
+  <button class="btn" bindtap="submit" wx:if="{{mode == 'create'}}">Create an Book</button>
+  <view class="btns" wx:else>
+    <button class="btn" bindtap="update">Update the Book</button>
+    <button class="btn" bindtap="delete">Delete the Book</button>
+  </view>
+</view>

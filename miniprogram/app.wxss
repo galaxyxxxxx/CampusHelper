@@ -10,7 +10,7 @@
 } 
 
 page {
-  background: #ffffff;
+  background: #fff;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -20,6 +20,8 @@ page {
   --color-link: rgb(52, 120, 243);
   --color-border: #f1f1f1;
   --color-gray: #f3f5f7;
+  --color-tips: #555555;
+  letter-spacing: 1rpx;
 }
 
 /* 一些通用样式 */
@@ -33,11 +35,19 @@ van-icon {
   justify-content: space-between;
   align-items: center;
   padding: 20rpx 0;
-  border-bottom: 1px solid #f1f1f1;
+  border-bottom: 1px solid var(--color-border);
 }
 .label{
   font-size: x-large;
   font-weight: bold;
+}
+.labelMini{
+  font-size: larger;
+  font-weight: bold;
+}
+.desc{
+  margin-top: 16rpx;
+  font-size: smaller;
 }
 .btn{
   width: 92vw;
@@ -47,9 +57,53 @@ van-icon {
   line-height: 1;
   
   height: 80rpx;
-  border-radius: 40rpx;
 
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 20rpx;
+  border-radius: 40rpx;
+  overflow: hidden;
+}
+.btn::after{
+  border:0
+}
+.btn:nth-of-type(2){
+  color: var(--color-theme);
+  background-color: #fff;
+  border: 1px solid var(--color-border);
+}
+.btns{
+  margin-top: 48rpx;
+}
+/* 表单 */
+.form{
+  width: 92vw;
+  margin: 20rpx 0 ;
+}
+.form-list{
+  height: 80rpx;
+  display: flex;
+  flex-shrink: 1;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--color-gray);
+  border-radius: 40rpx;
+  margin: 20rpx 0;
+  padding: 2vw 4vw;
+  box-sizing: border-box;
+  font-size: smaller;
+}
+.formLabel{
+  width: 24vw;
+  font-weight: bold;
+}
+.inputInline{
+  flex: 1;
+}
+.value{
+  flex: 1;
+}
+.redText{
+  color: red;
 }

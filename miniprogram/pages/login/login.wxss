@@ -10,7 +10,7 @@
 }
 .mode image{
   width: 200rpx;
-  min-height: 200rpx;
+  height: 200rpx;
   border-radius: 50%;
   background-color: orange;
 }
@@ -43,6 +43,7 @@
 }
 .tip{
   font-size: x-small;
+  width: 100%;
 }
 .signin{
   font-weight: bold;
@@ -54,10 +55,6 @@
   flex-direction: column;
   align-items: flex-start;
   border: none;
-}
-.desc{
-  margin-top: 16rpx;
-  font-size: smaller;
 }
 .form{
   width: 92vw;
@@ -72,9 +69,8 @@
   margin: 20rpx 0;
   font-size: smaller;
 }
-.lable{
-  padding-left: 5vw;
-  width: 32vw;
+.major{
+  flex: 1;
 }
 .arrow{
   float: right;

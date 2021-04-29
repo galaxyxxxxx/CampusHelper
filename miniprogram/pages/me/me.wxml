@@ -5,11 +5,11 @@
     <view class="major">{{major}}</view>
   </view>
   <view class="personal">
-    <view class="label">Personal</view>
-    <view class="list">
+    <!-- <view class="label">Personal</view> -->
+    <view class="list" bindtap="navigateToInfo">
       <van-icon name="user-o" />
       <view class="title">Personal Information</view>
-      <van-icon name="arrow" />
+      <van-icon name="arrow" size='20px'/>
     </view>
     <view class="list">
       <van-icon name="like-o" />
@@ -28,7 +28,7 @@
     </view>
   </view>
   <view class="setting">
-    <view class="label">Setting</view>
+    <!-- <view class="label">Setting</view> -->
     <view class="list">
       <van-icon name="setting-o" />
       <view class="title">Integrations</view>

@@ -1,0 +1,70 @@
+<view class="container">
+  <view class="head">
+    <view class="left">
+      <view class="label">
+        <text wx:if="{{mode == 'create'}}">发布</text>
+        <text wx:else>编辑</text>您的课程</view>
+      <view class="desc"><text wx:if="{{mode == 'create'}}">发布</text>
+        <text wx:else>编辑</text>你的课程信息，便于同学们在新学期初更快的了解您的课程</view>
+    </view>
+  </view>
+  <view class="form">
+    
+    <!-- <van-divider contentPosition="center" textColor="rgb(200, 200, 200)">基本信息</van-divider> -->
+    <view class="upload">
+      <van-uploader file-list="{{ fileList }}" accept='image'  preview-size='200px' bind:after-read="afterRead" image-fit='scaleToFill' max-count="1"  bind:delete="deleteImg" deletable="{{ true }}" upload-text='选张封面图吧 (建议宽高3:4左右)'/>
+      <view class="uploadLabel"></view>
+    </view>
+    <view class="form-list">
+      <view class="formLabel">课程名称<text class="redText"> * </text></view><input class="inputInline" type="text" model:value="{{name}}" />
+    </view>
+    <view class="form-list">
+      <view class="formLabel">课程ID</view><input class="inputInline" type="number" model:value="{{id}}" placeholder=""/>
+    </view>
+    
+
+    <view class="form-list" bindtap="clickDate">
+      <view class="formLabel">开课学期<text class="redText"> * </text></view><view class="date" >{{year}} <text wx:if="{{season && year}}"> · </text>{{season}}</view>
+      <view class="arrow"><van-icon name="arrow" /></view>
+    </view>
+    <view class="form-list" bindtap="clickProp">
+      <view class="formLabel">课程属性<text class="redText"> * </text></view>
+      <view class="property" >{{property}}</view>
+      <view class="arrow"><van-icon name="arrow" /></view>
+    </view>
+
+    <!-- <van-divider contentPosition="center" textColor="rgb(200, 200, 200)">海报展示数据</van-divider> -->
+    <view class="form-list">
+      <view class="formLabel">开课标语<text class="redText"> * </text></view><input class="inputInline" type="number" model:value="{{slogan}}" placeholder=""/>
+    </view>
+    <view class="form-list">
+      <view class="formLabel">课程简介1<text class="redText"> * </text></view><input class="inputInline" type="number" model:value="{{desc}}" placeholder=""/>
+    </view>
+    <view class="form-list">
+      <view class="formLabel">课程简介2</view><input class="inputInline" type="number" model:value="{{desc}}" placeholder=""/>
+    </view>
+    <view class="form-list">
+      <view class="formLabel">深色模式<text class="redText"> * </text></view>
+      <view class="switch"><van-switch checked="{{ dark }}" bind:change="onChangeDarkMode" size='48rpx'/></view> 
+    </view>
+    <van-divider contentPosition="center" textColor="rgb(200, 200, 200)">后三项数据用于首页展示 对应关系如下</van-divider> 
+    <cover-image src="/image/courseGuider.jpg"></cover-image>
+    <van-divider contentPosition="center" textColor="rgb(200, 200, 200)">若封面颜色过浅(如左图) 请勾选深色模式</van-divider> 
+    <cover-image src="/image/courseGuider2.jpg"></cover-image>
+
+    <!-- 弹窗区 -->
+    <van-popup show="{{ showDatePicker }}" bind:close="onCloseDate" position="bottom" round>
+      <van-picker columns="{{ dates }}" bind:change="onChangeDate"/>
+    </van-popup>
+    <van-popup show="{{ showPropPicker }}" bind:close="onCloseProp" position="bottom" round>
+      <van-picker columns="{{ properties }}" bind:change="onChangeProp"/>
+    </van-popup>
+
+    <button class="btn" bindtap="submit" wx:if="{{mode == 'create'}}">Create an Course</button>
+    <view class="btns" wx:else>
+      <button class="btn" bindtap="update">更新数据</button>
+      <button class="btn" bindtap="delete">撤销课程</button>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,29 @@
+<view class="container">
+  <view class="head">
+    <view class="label">Personal Information</view>
+    <view class="desc">Update your account Information here ~</view>
+  </view>
+  <view class="form">
+    <view class="form-list">
+      <view class="formLabel">Username</view><input class="inputInline" type="text" class="value" model:value="{{name}}" />
+    </view>
+    <view class="form-list">
+      <view class="formLabel">Campus ID</view><input class="inputInline" type="number" class="value" model:value="{{id}}" />
+    </view>
+    <view class="form-list">
+      <view class="formLabel">Mobile Number</view><input class="inputInline" type="number" class="value" model:value="{{tel}}" />
+    </view>
+    <view class="form-list" bindtap="onShowDep">
+      <view class="formLabel">Major</view>
+      <view class="value" >{{dep1}} {{dep2}}</view>
+      <view class="arrow"><van-icon name="arrow" /></view> 
+    </view>
+    <van-dialog id="van-dialog"  />
+    <van-popup show="{{ showDep }}" position="bottom" bind:close="onCloseDep" 	bind:confirm="onConfirmDep" bind:change="onChangeDep" round>
+				<van-picker columns="{{ department }}" bind:change="onChangeDep" show-toolbar title="" bind:cancel="onCancelDep" bind:close="onCloseDep"
+					bind:confirm="onConfirmDep" />
+      </van-popup>
+    <button type="submit" class="btn">Update your Information</button>
+  </view>
+  <view class="tip2">The information is protected. Our <text class="emphysis">Terms of Use</text> and <text class="emphysis">Privacy Policy</text></view>
+</view>

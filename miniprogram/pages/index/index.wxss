@@ -87,48 +87,8 @@
   border-radius: 50%;
   overflow: hidden;
 }
-/* static */
-.static{
-  width: 92vw;
-  height: 20vh;
-  padding: 20rpx;
-  border-radius: 20rpx;
-  background-color: var(--color-gray);
-}
 /* main */
-.course{
-  margin: 20rpx 0;
-  width: 92vw;
-  display: flex;
-}
-.left{
-  width: 120rpx;
-  height: 120rpx;
-  margin-right: 20rpx;
-  border-radius: 40rpx;
-  overflow: hidden;
-}
-.middle{
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding-bottom: 20rpx;
-}
-.right{
-  width: 100rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.title{
-  font-size: smaller;
-}
-.date{
-  font-size: x-small;
-  font-weight: lighter;
-  color: #999;
-}
+
 /* 处理被tabbar遮挡的部分 */
 #bottom-watch {
   position: absolute;

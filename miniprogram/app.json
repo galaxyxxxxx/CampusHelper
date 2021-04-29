@@ -1,10 +1,20 @@
 {
   "pages": [
+		"pages/login/login",
+
 		"pages/index/index",
+		"pages/favor/favor",
 		"pages/books/books",
-		"pages/search/search",
 		"pages/me/me",
-		"pages/login/login"
+
+		"pages/search/search",
+		"pages/courseDetail/courseDetail",
+		"pages/bookDetail/bookDetail",
+
+		"pages/info/info",
+		"pages/addCourse/addCourse",
+		"pages/addBook/addBook"
+		
   ],
   "tabBar": {
 		"custom": true,
@@ -19,12 +29,15 @@
 				"pagePath": "pages/books/books"
 			},
 			{
+				"pagePath": "pages/favor/favor"
+			},
+			{
 				"pagePath": "pages/me/me"
 			}
 		]
 	},
   "window": {
-    "backgroundColor": "#F6F6F6",
+    "backgroundColor": "#FFFFFF",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#FFFFFF",
     "navigationBarTitleText": "BJUT教务助手",
@@ -37,6 +50,11 @@
 		"van-popup": "./weapp/dist/popup/index",
 		"van-cell": "./weapp/dist/cell/index",
 		"van-cell-group": "./weapp/dist/cell-group/index",
-		"van-icon": "./weapp/dist/icon/index"
+		"van-icon": "./weapp/dist/icon/index",
+		"van-divider": "./weapp/dist/divider/index",
+		"van-switch": "./weapp/dist/switch/index",
+		"van-uploader": "./weapp/dist/uploader/index",
+		"head" : "./components/head/head",
+		"card-L-top" : "./components/card-L-top/card-L-top"
 	}
 }

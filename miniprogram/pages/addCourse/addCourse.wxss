@@ -1,0 +1,26 @@
+.upload{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24rpx;
+}
+.uploadLabel{
+  color: #999;
+  font-size: smaller;
+}
+.date{
+  flex: 1;
+}
+.property{
+  flex: 1;
+}
+.labelMini:nth-of-type(3){
+  padding-top: 80rpx;
+}
+.switch{
+  flex: 1;
+}
+van-switch{
+  float: right;
+  color: rgb(201, 201, 201);
+}

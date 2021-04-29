@@ -1,1 +1,18 @@
-/* components/head/head.wxss */
+.head{
+  width: 92vw;
+  box-sizing: border-box;
+  margin: 8rpx 4vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-gray);
+}
+.label{
+  font-size: xx-large;
+  font-weight: bolder;
+}
+.avatar{
+  width: 10vw;
+  border-radius: 50%;
+  overflow: hidden;
+}

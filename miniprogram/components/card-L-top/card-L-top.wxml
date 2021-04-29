@@ -1,0 +1,11 @@
+<view class="{{mode=='white' ? 'lightMode' : 'darkMode'}}">
+  <view class="box" style="background: url({{img}}) center center no-repeat; background-size: 100% auto" bindtap="toCourseDetail">
+  <view class="header">
+    <view class="desc">{{desc}}</view>
+    <view class="title">{{title}}</view>
+  </view>
+  <view class="footer">
+    <text>{{desc2}}</text>
+  </view>
+</view>
+</view>

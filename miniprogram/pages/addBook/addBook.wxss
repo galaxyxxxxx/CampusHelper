@@ -1,0 +1,10 @@
+.upload{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24rpx;
+}
+.uploadLabel{
+  color: #999;
+  font-size: smaller;
+}

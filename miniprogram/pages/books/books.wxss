@@ -1,1 +1,50 @@
-/* pages/books/books.wxss */
+.right{
+  background-color: var(--color-theme);
+  color: #fff;
+  border-radius: 50%;
+  padding: 16rpx;
+}
+.search{
+  width: 100vw;
+}
+.books{
+  width: 92vw;
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+.book{
+  width: 44vw;
+  height: 66vw;
+  box-sizing: border-box;
+  margin: 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-gray);
+  border-radius: 24rpx;
+  padding: 24rpx;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  font-size: small;
+}
+.cover{
+  flex: 1;
+}
+.control{
+  margin-top: 24rpx;
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+}
+.like, .more{
+  background-color: #fff;
+  border-radius: 50%;
+  font-size: larger;
+  font-weight: bold;
+  padding: 10rpx;
+}

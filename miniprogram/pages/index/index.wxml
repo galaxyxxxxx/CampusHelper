@@ -1,4 +1,4 @@
-<view class="authrization" wx:if="{{!hasUserInfo}}">
+<!-- <view class="authrization" wx:if="{{!hasUserInfo}}">
   <view class="authMain" wx:if="{{canIUseGetUserProfile}}">
     <image src='../../image/bjut.png' width="200rpx" height="200rpx"></image>
     <view class='content'>
@@ -11,29 +11,17 @@
   </view>
 
   <view wx:else>请升级微信版本</view>
-</view>
+</view> -->
 
-<view class="container" wx:else>
-  <view class="head">
-    <view class="label">My Courses</view>
-    <view class="avatar" bindtap="me"><open-data type="userAvatarUrl"></open-data></view>
-  </view>
-  <view class="static">
-    data
-  </view>
+<view class="container" >
+  <head title='Course'></head>
+
   <view class="courses">
-    <view class="header">title + search</view>
-    <view class="course" wx:for="{{courses}}" wx:key="id">
-      <view class="left">
-        <open-data type="userAvatarUrl"></open-data>
-      </view>
-      <view class="middle">
-        <view class="title">{{item.title}} · {{item.teacher}}</view>
-        <view class="date">{{item.date+item.semester}} - {{item.date+item.semester+ 1}}学年 {{item.semester == 0 ? '春' : '秋'}}季学期</view>
-      </view>
-      <view class="right">
-        ￥{{item.price}}
-      </view>
+    <card-L-top desc='编译那点事儿' title='编译之旅从入门到___' desc2='不费吹灰之力，轻松搞定编译原理' img='https://wx4.sinaimg.cn/mw690/bc52b9dfly1govs7d3mtsj20u01d9dnc.jpg' mode='white'></card-L-top>
+    <card-L-top desc='开发有何难' title='你还在意识流编程吗???' desc2='软件孵化的打怪升级之旅，从0实现一个自己的小程序' img='https://wx3.sinaimg.cn/mw690/9c15c143ly1godhdt0f8ij20sg16otfq.jpg' mode='white'></card-L-top>
+    <card-L-top desc='珠宝设计指南' title='让珍宝活起来需要几步？' desc2='听闻这世上的钻石曾是天外陨落的星辰' img='/miniprogram/image/darkModeTest.jpg' mode='black'></card-L-top>
+    <view wx:for="{{courses}}" wx:key="id">
+      <card-L-top desc='{{item.desc}}' title='{{item.title}}' desc2='{{item.desc2}}' img='{{item.img}}' mode='{{item.mode}}'></card-L-top>
     </view>
   </view>
   <view class="bottomWach"></view>
