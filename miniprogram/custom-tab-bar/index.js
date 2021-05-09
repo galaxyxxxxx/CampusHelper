@@ -21,23 +21,20 @@ Component({
 		]
 	},
 
-	mounted : function(){
-		if(wx.getStorageSync('tabIndex')){
-			this.setData({
-				active:wx.getStorageSync('tabIndex')
-			})
-		}
-	},
-
 	methods: {
 		onChange(event) {
 			this.setData({ active: event.detail})
-			wx.setStorageSync('tabIndex', event.detail)
 			wx.switchTab({
 				url: this.data.list[event.detail].url
 			});
-
 		},
+
+		init() {
+			const page = getCurrentPages().pop();
+			this.setData({
+				active: this.data.list.findIndex(item => item.url === `/${page.route}`)
+			});
+		}
 
 	}
 });

@@ -38,9 +38,7 @@ Page({
   },
 
   onShow: function () {
-    // wx.showLoading({
-    //   title: 'Loading...',
-    // })
+    this.getTabBar().init();
   },
 
   // 样式调整

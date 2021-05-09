@@ -6,7 +6,10 @@
 
   <view class="books">
     <view class="book" wx:for="{{books}}">
-      <view class="cover">{{item.cover}}</view>
+      <view class="cover">
+        <!-- {{item.cover}} -->
+        <img src="https://wx4.sinaimg.cn/mw690/bc52b9dfly1govs7d3mtsj20u01d9dnc.jpg" alt="" srcset="" />
+      </view>
       <view class="title">{{item.title}} ￥{{item.price}}</view>
       <view class="desc">【{{item.course}}】{{item.teacher}}老师推荐</view>
       <view class="control">
